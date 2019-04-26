@@ -12,6 +12,8 @@ let cHeight = 480;
 let g = Game;
 
 
+
+
 class Canvas extends React.Component {
   componentDidMount() {
     const canvas = document.getElementById('canvas')
@@ -20,7 +22,7 @@ class Canvas extends React.Component {
     ctx.fillRect(0,0,480,480);
     ctx.fillStyle = "blue";
 
-    
+
 
     for (let i = 0; i < 8; i++){
       for (let j = 0; j < 8; j++){
