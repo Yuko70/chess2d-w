@@ -9,6 +9,8 @@ let imageAdress = 'https://raw.githubusercontent.com/yuko70/chess2d/master/img/'
 let cWidth = 480;
 let cHeight = 480;
 
+let g = Game;
+
 
 class Canvas extends React.Component {
   componentDidMount() {
@@ -16,7 +18,7 @@ class Canvas extends React.Component {
     const ctx = canvas.getContext("2d")
     //ctx.fillStyle = "#FF0000";
     ctx.fillRect(0,0,480,480);
-    //ctx.fillStyle = "blue";
+    ctx.fillStyle = "blue";
     for (let i = 0; i < 8; i++){
       for (let j = 0; j < 8; j++){
           let x = 60*j;
@@ -61,7 +63,7 @@ static function drawImage(ctx,x,y,src){
 
 
 
-class App extends Component {
+/*class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -78,9 +80,31 @@ class App extends Component {
       </div>
     );
   }
-}
+}*/
 
 //render(<App />, document.getElementById('root'));
+
+
+class Game{
+  constructor(){
+     let state = {
+      lives : 3,
+      pac : Pacman(),
+      ghost : Ghost(),
+      map : Maze,
+      pacTiles : [
+        
+      ],
+    };
+  }
+  preLoad(){
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = "green";
+    ctx.fillText(100,100,"sdawdawdawdawdawdawdawdawdadawda");
+    ctx.stroke()
+  }
+}
 
 
 render(<Canvas />, document.getElementById('root'));
