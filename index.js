@@ -6,6 +6,8 @@ import './style.css';
 
 
 let imageAdress = 'https://raw.githubusercontent.com/yuko70/chess2d/master/img/';
+let cWidth = 480;
+let cHeight = 480;
 
 
 class Canvas extends React.Component {
@@ -78,7 +80,7 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+//render(<App />, document.getElementById('root'));
 
 
-
+render(<Canvas />, document.getElementById('root'));
