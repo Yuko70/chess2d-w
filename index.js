@@ -12,34 +12,24 @@ class Canvas extends React.Component {
   componentDidMount() {
     const canvas = document.getElementById('canvas')
     const ctx = canvas.getContext("2d")
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0,0,640,448);
-    ctx.fillStyle = "blue";
-    for (let i = 0; i< Maze.length;i++){
-      for (let j = 0; j<Maze[i].length;j++){
-          let x = 32*j;
-          let y = 32*i;
-        switch (Maze[i].charAt(j)){
-          case '0':
-            ctx.fillRect(x,y,31,31);
-            break;
-          case 'P':
-            drawImage(ctx,x,y,'pac_man_0.png');
-            /*let img = new Image();
-            img.src = imageAdress+'pac_man_0.png';
-            img.onload = function(){
-            ctx.drawImage(img,x,y);
-            }*/
-            break;
-          case 'G':
-            drawImage(ctx,x,y,'spr_ghost_orange_0.png');
-            /*let img1 = new Image();
-            img1.src = imageAdress+'spr_ghost_orange_0.png';
-            img1.onload = function(){
-            ctx.drawImage(img1,x,y);
-            }*/
-            break;
+    //ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0,0,480,480);
+    //ctx.fillStyle = "blue";
+    for (let i = 0; i < 8; i++){
+      for (let j = 0; j < 8; j++){
+          let x = 60*j;
+          let y = 60*i;
+
+          if (i % 2 == 0 & j % 2 == 0) {
+            drawImage(ctx,x,y,'whiteg.png');
           }
+          else if (i % 2 == 1 & j % 2 == 1) {
+            drawImage(ctx,x,y,'whiteg.png');
+          }
+          else {
+            drawImage(ctx,x,y,'blackg.png');
+          }
+
         }
         //ctx.strokeText(Maze[i].charAt(j), x+16, y+16);
     }
@@ -89,3 +79,6 @@ class App extends Component {
 }
 
 render(<App />, document.getElementById('root'));
+
+
+
